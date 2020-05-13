@@ -13,7 +13,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));
 
-//const hostname = 'localhost';
+const hostname = '0.0.0.0';
 const port = process.env.PORT || 5000;
 
 var allowCrossDomain = function(req, res, next) {
