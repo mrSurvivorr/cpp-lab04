@@ -1,0 +1,32 @@
+{
+    "books": [
+      {
+        "id": 1,
+        "picture": "https://images-na.ssl-images-amazon.com/images/I/91cO-IrKBpL.jpg",
+        "name": "The Witcher",
+        "author": "Andjey Sapkowski",
+        "isAvailable": true
+      },
+      {
+        "id": 2,
+        "picture": "https://images-na.ssl-images-amazon.com/images/I/91SZSW8qSsL.jpg",
+        "name": "1984",
+        "author": "George Orwell",
+        "isAvailable": true
+      },
+      {
+        "id": 3,
+        "picture": "https://images-na.ssl-images-amazon.com/images/I/41g5uSCqOlL._SX331_BO1,204,203,200_.jpg",
+        "name": "Shadow over Innsmouth",
+        "author": "H.P. Lovecraft",
+        "isAvailable": true
+      },
+      {
+        "id": 4,
+        "picture": "https://m.media-amazon.com/images/I/51PFe1RQSeL.jpg",
+        "name": "Legend of Drizzt",
+        "author": "R.A. Salvatore",
+        "isAvailable": true
+      }
+    ]
+  }

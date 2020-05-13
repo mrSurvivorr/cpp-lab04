@@ -1,0 +1,77 @@
+doctype html
+html
+  head
+    title Add book
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    style.
+        div.container {text-align: center;}
+        button.btn {margin: 20px}
+        .form-group {
+            display: inline-block;
+            width: 25em;
+        }
+        .myForm {
+            font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+            font-size: 0.8em;
+            width: 30em;
+            padding: 1em;
+            border: 1px solid #ccc;
+            margin-top: 35px;
+            margin-left: 30%
+        }
+
+        .myForm * {
+            box-sizing: border-box;
+        }
+
+        .myForm legend,
+        .myForm label {
+            font-weight: bold;
+        }
+        
+        .myForm label {
+            text-align: left;
+            padding: 0.3em;
+            float: left;
+            margin: 0.3em;
+        }
+
+        .myForm input[type="text"] {
+            float: right;
+            width: 70%;
+            border: 1px solid #ccc;
+            font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+            font-size: 0.9em;
+            padding: 0.3em;
+            margin: 0.3em;
+        }
+
+        .myForm button {
+            padding: 10px;
+            border-radius: 0.5em;
+            background: #eee;
+            border: none;
+            font-weight: bold;
+            margin-top: 1em;
+        }
+
+
+block content
+  .main.container
+    .row
+      .col-md-6.col-md-offset-3
+      .myForm
+        h1.ui.center Add book
+
+        // register form
+        form(method='POST' action='/createBook')
+          div.form-group
+            label(for='name') Name
+            input#name.form-control(type='text' name='name')
+          div.form-group
+            label(for='author') Author
+            input#author.form-control(type='text' name='author')
+          div.form-group
+            label(for='picture') Photo
+            input#picture.form-control(type='text' name='picture')
+          button.btn.btn-primary(type='submit') Create

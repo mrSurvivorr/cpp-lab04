@@ -1,0 +1,50 @@
+doctype html
+html
+  head
+    title Книга
+    link(rel='stylesheet', href='/public/stylesheets/style.css')
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    style.
+      div.book {display: flex; margin-top: 5%; margin-left: 30%}
+      div.book-details {margin-left: 40px}
+      div.actions {margin-top: 30px}
+      button.delete-btn {margin-top: 20px}
+      div.form-container {margin-top: 50px}
+      button.edit-btn {margin-top: 20px}
+      button.return-btn {margin-top: 20px}
+
+block content
+  div.book
+    img.book-image(src=book.picture width="20%")
+    div.book-details
+      h1.book-name
+        | #{book.name}
+      h2.book-author
+        | #{book.author}
+      div.actions
+      if book.isAvailable
+        p.label
+          | The book is available
+      else
+        p.label
+          | The book is unavailable
+      div.form-container
+        form(method='POST' action='/changeBookStatus')
+          input(type="hidden" name="id" value=`${book.id}`)
+          input(type="hidden" name="isAvailable" value=`${!book.isAvailable}`)
+          button.btn(type='submit')
+            if book.isAvailable
+                | Give the book out
+            else
+                | Return the book
+
+        form(method='GET' action=`/editBook`)
+          input(type="hidden" name="id" value=`${book.id}`)
+          button.edit-btn(type='submit') Change book info
+
+        form(method='POST' action='/deleteBook')
+          input(type="hidden" name="id" value=`${book.id}`)
+          button.delete-btn(type='submit') Delete book
+        
+        form(method='GET' action='/')
+          button.return-btn(type='submit') Return to main page
